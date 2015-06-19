@@ -30,6 +30,6 @@
             </c:forEach>
         </tbody>
     </table>
-    <p><a href="RecipeController?action=insert">Add User</a></p>
+    <p><a href="RecipeController?action=insert">Add Recipe</a></p>
 </body>
 </html>

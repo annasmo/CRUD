@@ -17,6 +17,7 @@
             </tr>
         </thead>
         <tbody>
+        <h1>${recipes}</h1>
             <c:forEach items="${recipes}" var="recipe">
                 <tr>
                     <td><c:out value="${recipe.recipeid}" /></td>
@@ -30,6 +31,6 @@
             </c:forEach>
         </tbody>
     </table>
-    <p><a href="RecipeController?action=insert">Add User</a></p>
+    <p><a href="RecipeController?action=insert">Add Recipe</a></p>
 </body>
 </html>

@@ -7,7 +7,7 @@
 <title>Panel główny</title>
 </head>
 <body>
-<jsp:include page="listRecipe.jsp" />
+<jsp:forward page="RecipeController?action=listRecipe" />
 
 <!-- tutaj trzeba będzie dodać include najpewniej do listRecipe.jsp, żeby na 'dzień dobry' wyświetliło coś -->
 </body>
