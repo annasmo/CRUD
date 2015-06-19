@@ -30,17 +30,22 @@ public class Product{
     public String getName() {
         return name;
     }
-    public void setProductType(eProdtype productType) {
-        this.productType= productType;
+    public void setProductType(String productType) {
+        this.productType= eProdtype.valueOf(productType);
     }
-    public eProdtype getProductType() {
-        return productType;
+    public String getProductType() {
+        return productType.name();
     }
     public void setAmount(int amount) {
         this.amount = amount;
     }
     public int getAmount() {
         return amount;
+    }
+    @Override
+    public String toString() {
+        return "Product [id=" + productId + ". Product Name=" + name + ", amount=" + amount
+                + ", Type=" + productType + "]";
     }
 
 }
