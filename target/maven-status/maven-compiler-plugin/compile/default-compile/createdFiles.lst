@@ -1,0 +1,12 @@
+main\java\controller\RecipeController.class
+main\java\model\eFlavour.class
+main\java\controller\FridgeController.class
+main\java\model\Product.class
+main\java\model\eDifficulty.class
+main\java\model\Fridge.class
+main\java\model\eProdtype.class
+main\java\util\DbUtil.class
+main\java\model\eType.class
+main\java\dao\RecipeDao.class
+main\java\dao\FridgeDao.class
+main\java\model\Recipe.class
