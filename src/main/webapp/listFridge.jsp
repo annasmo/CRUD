@@ -15,7 +15,7 @@
 	<div id="center" style="text-align:center;" name="interfejs">
 		<div id="menu_place" name="panel_sterowania">
 			<div id="pole_batona">
-				<p><a id="odsylacz" href="FridgeController?action=insert">Add Recipe</a></p>
+				<p><a id="odsylacz" href="RecipeController?action=insert">Add Recipe</a></p>
 				<!--<input type="submit" value="Add recipe" name="Add_recipe">-->
 			</div>
 			<div id="pole_batona" style="top:90px;">

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -47,10 +48,10 @@
 			</div>
 		</div>
 		<div id="robocza"><center>
-			
+
 			<form method="POST" action='RecipeController' name="frmAddRecipe">
 				Recipe ID : <input type="text" readonly="readonly" name="recipeid"
-					value="<c:out value="${recipe.recipeId}" />" /> <br />
+					value="${recipe.recipeId}" /> <br />
 				Name : <input
 					type="text" name="dishname"
 					value="<c:out value="${recipe.name}" />" /> <br />

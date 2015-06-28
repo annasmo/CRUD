@@ -46,20 +46,16 @@
 						<th>Product ID</th>
 						<th>Name</th>
 						<th>Amount</th>
-						<th colspan=2>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${products}" var="product">
+					<c:forEach items="${product}" var="product">
 						<tr>
 							<td><c:out value="${product.userID}"/></td>
 							<td><c:out value="${product.productID}"/></td>
 							<td><c:out value="${product.name}"/></td>
 							<td><c:out value="${product.amount}"/></td>
-							<td><a id="odsylacz" href="FridgeController?action=edit&productId=<c:out value="${product.productID}"/>">Update</a>
-							</td>
-							<td><a id="odsylacz" href="FridgeController?action=delete&productId=<c:out value="${product.productID}"/>">Delete</a>
-							</td>
+
 						</tr>
 					</c:forEach>
 				</tbody>
