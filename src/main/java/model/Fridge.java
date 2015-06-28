@@ -35,4 +35,9 @@ public class Fridge {
 	    public int getUserID() {
 	        return userID;
 	    }
+	@Override
+	public String toString() {
+		return "Fridge [id=" + productID + ". Product Name=" + name + ", amount=" + amount
+				+ ", userID=" + userID + "]";
+	}
 }

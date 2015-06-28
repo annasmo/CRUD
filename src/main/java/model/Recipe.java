@@ -65,7 +65,7 @@ public class Recipe {
     }*/
     @Override
     public String toString() {
-        return "Recipe [id=" + recipeId + "Name=" + name + ", type=" + type +
+        return "Recipe [id=" + recipeId + ". Name=" + name + ", type=" + type +
                 ", flavour=" + flavour + ", difficulty level=" + difficulty + "]";
     }
 }

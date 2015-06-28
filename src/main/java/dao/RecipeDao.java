@@ -31,6 +31,7 @@ public class RecipeDao {
     	 * połączenie z bazą danych
     	 */
         connection = DbUtil.getConnection();
+        System.out.println(connection);
     }
 
     public void addRecipe(Recipe recipe) {
@@ -88,7 +89,7 @@ public class RecipeDao {
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("update recipe set recipename=?, dishtype=?, dishflavour=?, difficultylevel=?" +
-                            "where recipeid=?");
+                            " where recipeid=?");
             // Parameters start with 1
             preparedStatement.setString(1, recipe.getName());
             preparedStatement.setString(2, recipe.getType());

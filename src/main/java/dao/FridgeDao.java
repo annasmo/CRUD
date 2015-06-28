@@ -25,21 +25,21 @@ import main.java.util.DbUtil;
 public class FridgeDao {
 
 	private Connection connection;
-	
+
 	public FridgeDao() {
 		connection = DbUtil.getConnection();
 	}
 
 /*dodawanie produktu do lodówki
- 
-  Atrybuty: nazwa składnika (varchar) - ProductName 
+
+  Atrybuty: nazwa składnika (varchar) - ProductName
 			ilość (int) - ProductAmount
 
 Użytkownik wprowadza posiadane pokarmy wraz z ich ilością.
- 
+
  */
 	public void addProduct(Fridge fridge) {
-		
+
 		try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("insert into fridge(ProductName,ProductAmount, UserID) values (?, ?, ? )");
@@ -52,12 +52,12 @@ Użytkownik wprowadza posiadane pokarmy wraz z ich ilością.
             e.printStackTrace();
         }
 	}
-	
+
 /*
  usunięcie produktu z lodówki
  */
 	public void deleteProduct(int productID){
-		
+
         try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("delete from fridge where ProductID=?");
@@ -68,7 +68,7 @@ Użytkownik wprowadza posiadane pokarmy wraz z ich ilością.
             e.printStackTrace();
         }
 	}
-	
+
 /*
  uaktualnienie danych nt. produktu w lodówce
  */
@@ -76,7 +76,7 @@ Użytkownik wprowadza posiadane pokarmy wraz z ich ilością.
 		try {
             PreparedStatement preparedStatement = connection
                     .prepareStatement("update fridge set ProductName=?, ProductAmount=?" +
-                            "where ProductID=?");
+                            " where ProductID=?");
             preparedStatement.setString(1, fridge.getName());
             preparedStatement.setInt(2, fridge.getAmount());
             preparedStatement.setInt(3, fridge.getProductID());
@@ -92,7 +92,7 @@ Użytkownik wprowadza posiadane pokarmy wraz z ich ilością.
 */
 	public List<Fridge> getAllProducts(){
 		List<Fridge> products = new ArrayList<Fridge>();
-		
+
 		try {
             Statement statement = connection.createStatement();
             ResultSet rs = statement.executeQuery("select * from fridge");
@@ -111,13 +111,13 @@ Użytkownik wprowadza posiadane pokarmy wraz z ich ilością.
 
         return products;
 	}
-	
+
 /*
- wyświetlenie jednego produktu na podstawie ID	
+ wyświetlenie jednego produktu na podstawie ID
  */
 	public Fridge getProductById(int ProductID){
 		Fridge product = new Fridge();
-		
+
 		try {
             PreparedStatement preparedStatement = connection.
                     prepareStatement("select * from fridge where ProductID=?");

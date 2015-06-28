@@ -24,7 +24,8 @@ public class DbUtil {
         else {
             try {
                 Properties prop = new Properties();
-                InputStream inputStream = DbUtil.class.getClassLoader().getResourceAsStream("db.properties");
+
+                InputStream inputStream = DbUtil.class.getClassLoader().getResourceAsStream("/db.properties");
                 if(prop!= null) {
                     prop.load(inputStream);
                     String driver = prop.getProperty("driver");

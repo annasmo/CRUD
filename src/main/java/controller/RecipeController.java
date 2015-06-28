@@ -1,6 +1,7 @@
 package main.java.controller;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -61,10 +62,10 @@ public class RecipeController extends HttpServlet {
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		Recipe recipe = new Recipe();
-		recipe.setName(request.getParameter("name"));
-		recipe.setType(request.getParameter("type"));
-		recipe.setFlavour(request.getParameter("flavour"));
-		recipe.setDifficulty(request.getParameter("difficulty"));
+		recipe.setName(request.getParameter("dishname"));
+		recipe.setType(request.getParameter("dishtype"));
+		recipe.setFlavour(request.getParameter("dishflavour"));
+		recipe.setDifficulty(request.getParameter("dishdifficulty"));
 		String recipeId = request.getParameter("recipeId");
 		if(recipeId == null || recipeId.isEmpty())
 		{
@@ -75,6 +76,7 @@ public class RecipeController extends HttpServlet {
 			recipe.setRecipeId(Integer.parseInt(recipeId));
 			dao.updateRecipe(recipe);
 		}
+
 		RequestDispatcher view = request.getRequestDispatcher(LIST_RECIPE);
 		request.setAttribute("recipes", dao.getAllRecipes());
 		view.forward(request, response);
