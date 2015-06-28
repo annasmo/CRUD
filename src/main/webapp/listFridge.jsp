@@ -2,20 +2,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-  <title>TheFridge</title>
+  <title>The Fridge</title>
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <link rel="stylesheet" href="./style.css" type="text/css">
 </head>
 
 <body>
 	<header>
-	<h1>All recipes</h1>
+	<h1>Your fridge</h1>
 	</header>
 
 	<div id="center" style="text-align:center;" name="interfejs">
 		<div id="menu_place" name="panel_sterowania">
 			<div id="pole_batona">
-				<p><a id="odsylacz" href="RecipeController?action=insert">Add Recipe</a></p>
+				<p><a id="odsylacz" href="FridgeController?action=insert">Add Recipe</a></p>
 				<!--<input type="submit" value="Add recipe" name="Add_recipe">-->
 			</div>
 			<div id="pole_batona" style="top:90px;">
@@ -39,25 +39,23 @@
 			<table border=1>
 				<thead>
 					<tr>
-						<th>Recipe ID</th>
+						<th>Product ID</th>
 						<th>Name</th>
-						<th>Type</th>
-						<th>Flavour</th>
-						<th>Difficulty</th>
+						<th>Amount</th>
+						<th>userID</th>
 						<th colspan=2>Action</th>
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach items="${recipes}" var="recipe">
+					<c:forEach items="${products}" var="product">
 						<tr>
-							<td><c:out value="${recipe.recipeId}"/></td>
-							<td><c:out value="${recipe.name}"/></td>
-							<td><c:out value="${recipe.type}"/></td>
-							<td><c:out value="${recipe.flavour}"/></td>
-							<td><c:out value="${recipe.difficulty}"/></td>
-							<td><a id="odsylacz" href="RecipeController?action=edit&recipeId=<c:out value="${recipe.recipeId}"/>">Update</a>
+							<td><c:out value="${product.productID}"/></td>
+							<td><c:out value="${product.name}"/></td>
+							<td><c:out value="${product.amount}"/></td>
+							<td>><c:out value="${product.userID}"/></td>
+							<td><a id="odsylacz" href="FridgeController?action=edit&productId=<c:out value="${product.productID}"/>">Update</a>
 							</td>
-							<td><a id="odsylacz" href="RecipeController?action=delete&recipeId=<c:out value="${recipe.recipeId}"/>">Delete</a>
+							<td><a id="odsylacz" href="FridgeController?action=delete&productId=<c:out value="${product.productID}"/>">Delete</a>
 							</td>
 						</tr>
 					</c:forEach>

@@ -50,18 +50,18 @@
 			
 			<form method="POST" action='RecipeController' name="frmAddRecipe">
 				Recipe ID : <input type="text" readonly="readonly" name="recipeid"
-					value="<c:out value="${recipe.recipeid}" />" /> <br /> 
+					value="<c:out value="${recipe.recipeId}" />" /> <br />
 				Name : <input
 					type="text" name="dishname"
-					value="<c:out value="${recipe.dishname}" />" /> <br /> 
+					value="<c:out value="${recipe.name}" />" /> <br />
 				Type : <input
 					type="text" name="dishtype"
-					value="<c:out value="${recipe.dishtype}" />" /> <br /> 
+					value="<c:out value="${recipe.type}" />" /> <br />
 				Difficulty : <input
 					type="text" name="dishdifficulty"
-					value="<c:out value="${recipe.dishdifficulty}" />" /> <br />  
+					value="<c:out value="${recipe.difficulty}" />" /> <br />
 				Flavour : <input type="text" name="dishflavour"
-					value="<c:out value="${recipe.dishflavour}" />" /> <br /> 
+					value="<c:out value="${recipe.flavour}" />" /> <br />
 				<input type="submit" value="Add" />
 			</form>
 		</center></div>
