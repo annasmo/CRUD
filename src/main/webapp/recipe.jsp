@@ -50,7 +50,7 @@
 		<div id="robocza"><center>
 
 			<form method="POST" action='RecipeController' name="frmAddRecipe">
-				Recipe ID : <input type="text" readonly="readonly" name="recipeid"
+				Recipe ID : <input type="text" readonly="readonly" name="recipeId"
 					value="${recipe.recipeId}" /> <br />
 				Name : <input
 					type="text" name="dishname"

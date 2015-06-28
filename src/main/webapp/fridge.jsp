@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -36,30 +37,22 @@
 			</div>
 		</div>
 		<div id="robocza"><center>
-			
-			<!--// jsp:include page="menu.jsp" //kaĹĽda strona powinna zawieraÄ‡ tego includa, ĹĽeby na gĂłrze wyĹ›wietlaĹ‚o siÄ™ menu -->
 
-			<table border=1>
-				<thead>
-					<tr>
-						<th>User ID</th>
-						<th>Product ID</th>
-						<th>Name</th>
-						<th>Amount</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach items="${product}" var="product">
-						<tr>
-							<td><c:out value="${product.userID}"/></td>
-							<td><c:out value="${product.productID}"/></td>
-							<td><c:out value="${product.name}"/></td>
-							<td><c:out value="${product.amount}"/></td>
+			<form method="POST" action='FridgeController' name="frmAddProduct">
+				Recipe ID : <input type="text" readonly="readonly" name="productId"
+								   value="${fridge.productID}" /> <br />
+				Name : <input
+					type="text" name="name"
+					value="<c:out value="${fridge.name}" />" /> <br />
+				Type : <input
+					type="text" name="amount"
+					value="<c:out value="${fridge.amount}" />" /> <br />
+				Difficulty : <input
+					type="text" name="userID"
+					value="<c:out value="${fridge.userID}" />" /> <br />
 
-						</tr>
-					</c:forEach>
-				</tbody>
-			</table>
+				<input type="submit" value="Add" />
+			</form>
 
 		</center></div>
 	</div>
